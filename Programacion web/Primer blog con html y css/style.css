@@ -1,10 +1,10 @@
 
 :root {
     --bg-color: #ffffff;
-    --text-main: #030213;       /* Tu negro primario */
+    --text-main: #030213;       
     --text-muted: #717182;      /* Gris para textos secundarios */
     --border-color: #e0e0e0;
-    --accent-bg: #f8f9fa;       /* Fondo gris muy claro */
+    --accent-bg: #f8f9fa;       
     --primary-btn: #030213;
     --white: #ffffff;
     --radius: 10px;             /* Bordes redondeados consistentes */
@@ -27,7 +27,7 @@
 .logo-text {
     font-weight: 700;    /* Negrita */
     font-size: 1.2rem;   /* Tamaño del texto */
-    color: var(--text-main); /* Usa tu variable de color negro */
+    color: var(--text-main); 
 }
 
 * {
@@ -144,7 +144,7 @@ ul {
     gap: 30px;
 }
 
-/* Estilo de Tarjeta tipo "Made by Will" */
+/*estilo para las tarjetas*/
 .card {
     background: var(--white);
     border: 1px solid var(--border-color);
