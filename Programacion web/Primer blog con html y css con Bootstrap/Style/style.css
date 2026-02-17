@@ -1,0 +1,311 @@
+
+:root {
+    --bg-color: #ffffff;
+    --text-main: #030213;       
+    --text-muted: #717182;      /* Gris para textos secundarios */
+    --border-color: #e0e0e0;
+    --accent-bg: #f8f9fa;       /* Fondo gris muy claro */
+    --primary-btn: #030213;
+    --white: #ffffff;
+    --radius: 10px;             /* Bordes redondeados consistentes */
+    --font-stack: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+
+.brand-container {
+    display: flex;       /* Pone la imagen al lado del texto */
+    align-items: center; /* Los centra verticalmente */
+    gap: 12px;           /* Espacio entre el logo y el texto */
+}
+
+.logo-img {
+    height: 40px;        /* Altura fija para que no se vea gigante */
+    width: auto;         /* Mantiene la proporción */
+    display: block;      /* Evita espacios extraños debajo de la imagen */
+}
+
+.logo-text {
+    font-weight: 700;    /* Negrita */
+    font-size: 1.2rem;   /* Tamaño del texto */
+    color: var(--text-main); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave entre secciones */
+}
+
+body {
+    font-family: var(--font-stack);
+    color: var(--text-main);
+    line-height: 1.6;
+     /*Color de respaldo (por si la imagen no carga rápido) */
+    background-color: var(--bg-color);
+    background-image: url('../Sources/MadeByWill_fondo.png');/*imagen de fondo*/
+    /*'cover' hace que la imagen cubra todo el espacio sin estirarse feo */
+    background-size: cover;
+    /*Centra la imagen */
+    background-position: center center;
+    /*'fixed' hace que el fondo se quede quieto mientras se hace scroll.*/
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.site-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0;
+    position: sticky; /* Menú fijo al hacer scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+
+.hero {
+    text-align: center;
+    padding: 80px 0 60px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+
+.blog-section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    border-left: 5px solid var(--text-main); /* Detalle estético */
+    padding-left: 15px;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Estilo de las tarjetas*/
+.card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 30px;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-color: var(--text-main); /* Borde negro al hover */
+}
+
+.tag {
+    background-color: var(--accent-bg);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: var(--text-muted);
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Empuja el botón hacia abajo */
+}
+
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 20px 0;
+}
+
+/* preguntas de contacto*/
+.contact-section {
+    padding: 60px 0 100px;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Columna izq más ancha */
+    gap: 50px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    background-color: var(--accent-bg);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: var(--text-main);
+    background-color: var(--white);
+}
+
+.btn-primary {
+    background-color: var(--primary-btn);
+    color: var(--white);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.info-list li {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.info-list strong {
+    color: var(--text-main);
+}
+
+/* FOOTER */
+.site-footer {
+    background-color: var(--text-main);
+    color: var(--white);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-note {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* Layout para el Perfil (Sobre Mí) */
+.profile-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+}
+
+.profile-img-container {
+    flex: 1;
+    max-width: 300px;
+}
+
+.profile-photo {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    box-shadow: 10px 10px 0px var(--text-main);
+}
+
+.profile-content {
+    flex: 2;
+}
+
+.profile-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-form-container form {
+    width: 100%;
+}
